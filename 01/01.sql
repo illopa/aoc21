@@ -102,7 +102,7 @@ declare
     vOut varchar2(100);
 begin
     AOC21_P01.part_one(pOut => vOut);
-    htp.prn('part one: illopa says 'vOut||'<BR />');
+    htp.prn('part one: illopa says '||vOut||'<BR />');
     AOC21_P01.part_two(pOut => vOut);
-    htp.prn('part two: illopa says 'vOut||'<BR />');
+    htp.prn('part two: illopa says '||vOut||'<BR />');
 end;
