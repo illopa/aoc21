@@ -1,18 +1,30 @@
+create or replace package AOC21_P01 as
+
+    procedure part_one(pOut in out varchar2);
+    procedure part_two(pOut in out varchar2);
+
+end;
+/
 create or replace package body AOC21_P01 as
 
-    procedure init
-    is
-    begin
-        /*
-            CREATE TABLE  "AOC21_D01_DEPTH" 
-            (	"ID" NUMBER NOT NULL ENABLE, 
-                "N_DEPTH" NUMBER, 
-                CONSTRAINT "AOC21_D01_DEPTH_PK" PRIMARY KEY ("ID")
-            USING INDEX  ENABLE
-            )  DEFAULT COLLATION "USING_NLS_COMP"
-         */
-         NULL;   
-    end;
+    /*
+        ---- DDL
+
+        CREATE TABLE  "AOC21_D01_INPUT" 
+        (	"ID" NUMBER NOT NULL ENABLE, 
+            "COL001" VARCHAR2(1000), 
+            CONSTRAINT "AOC21_D01_INPUT_PK" PRIMARY KEY ("ID")
+        USING INDEX  ENABLE
+        )  DEFAULT COLLATION "USING_NLS_COMP"
+
+        CREATE TABLE  "AOC21_D01_DEPTH" 
+        (	"ID" NUMBER NOT NULL ENABLE, 
+            "N_DEPTH" NUMBER, 
+            CONSTRAINT "AOC21_D01_DEPTH_PK" PRIMARY KEY ("ID")
+        USING INDEX  ENABLE
+        )  DEFAULT COLLATION "USING_NLS_COMP"
+    
+     */
 
     procedure part_one(pOut in out varchar2)
     is
@@ -83,4 +95,14 @@ create or replace package body AOC21_P01 as
             ); 
     end;    
 
+end;
+/
+----------------------
+declare
+    vOut varchar2(100);
+begin
+    AOC21_P01.part_one(pOut => vOut);
+    htp.prn('part one: illopa says 'vOut||'<BR />');
+    AOC21_P01.part_two(pOut => vOut);
+    htp.prn('part two: illopa says 'vOut||'<BR />');
 end;
