@@ -43,7 +43,6 @@ create or replace package body AOC21_P02 as
         RETURN; -- returns single result
     END moving_one;    
 
-    -- to test
     procedure part_one(pOut in out varchar2)
         is
         begin
